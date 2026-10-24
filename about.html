@@ -1,144 +1,246 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Educathlon Academy</title>
-  <meta name="description" content="Learn about Educathlon Academy’s teaching approach, values and structured support." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Educathlon Academy in Berryfields, Aylesbury. With 15 years of experience, we offer supportive small-group 11+ tuition, KS3 Maths and GCSE Maths.">
+  <title>About Us | Educathlon Academy | Aylesbury</title>
   <style>
     :root {
-      --navy: #0b2c6b;
-      --gold: #d4af37;
-      --light: #f7f9fc;
-      --text: #1f2937;
-      --muted: #5b6472;
-      --white: #ffffff;
-      --border: #e5e7eb;
+      --navy:#0b2c6b;
+      --gold:#d4af37;
+      --light:#f7f9fc;
+      --text:#1f2937;
+      --muted:#5b6472;
+      --border:#e5e7eb;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand img { width: 72px; height: 72px; object-fit: contain; border-radius: 10px; background: white; }
-    .brand-name { font-size: 1.15rem; font-weight: 800; letter-spacing: 0.04em; color: var(--navy); margin: 0; }
-    .brand-tag { font-size: 0.84rem; color: var(--muted); margin: 2px 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    nav ul { list-style: none; display: flex; gap: 22px; padding: 0; margin: 0; color: var(--navy); font-weight: 600; flex-wrap: wrap; justify-content: flex-end; }
-    .hero, .hero-simple { background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 55%, #fffaf0 100%); }
-    .hero { padding: 72px 0 56px; }
-    .hero-simple { padding: 60px 0 40px; }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; }
-    .eyebrow { display: inline-block; background: rgba(212,175,55,0.14); color: #8a6b00; padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; margin-bottom: 18px; }
-    h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--navy); }
-    h2 { color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.5rem); margin: 0 0 12px; }
-    h3 { color: var(--navy); margin-top: 0; }
-    p { color: var(--muted); }
-    .subject-line { font-weight: 700; color: var(--navy); margin-bottom: 28px; }
-    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 14px 20px; border-radius: 14px; font-weight: 700; transition: 0.2s ease; border: 2px solid transparent; }
-    .btn-primary { background: var(--navy); color: white; }
-    .btn-secondary { border-color: var(--navy); color: var(--navy); background: white; }
-    .hero-card, .card, .panel, .contact-card, .form-card { background: white; border: 1px solid var(--border); border-radius: 22px; padding: 24px; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05); }
-    .hero-card img { max-width: 100%; display: block; margin: 0 auto 18px; border-radius: 16px; }
-    section { padding: 72px 0; }
-    .section-title { text-align: center; max-width: 760px; margin: 0 auto 38px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .steps { display: grid; gap: 14px; }
-    .step { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 18px; }
-    .step strong { color: var(--navy); display: block; margin-bottom: 6px; }
-    .list-box { background: white; border: 1px solid var(--border); border-radius: 22px; padding: 24px; }
-    .list-box ul { padding-left: 20px; color: var(--muted); margin-bottom: 0; }
-    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .contact-list { display: grid; gap: 14px; }
-    .contact-item { padding: 14px 16px; border-radius: 16px; background: var(--light); }
-    label { display: block; margin-bottom: 6px; font-weight: 700; color: var(--navy); }
-    input, textarea, select { width: 100%; padding: 12px 14px; border: 1px solid #cfd6e0; border-radius: 12px; font: inherit; margin-bottom: 16px; }
-    textarea { min-height: 130px; resize: vertical; }
-    footer { background: var(--navy); color: white; padding: 28px 0; margin-top: 24px; }
-    .footer-row { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; }
-    .footer-row small { color: rgba(255,255,255,0.85); }
-    @media (max-width: 920px) { .hero-grid, .cards, .two-col, .three-col, .contact-wrap { grid-template-columns: 1fr; } .nav { flex-direction: column; align-items: flex-start; } nav ul { justify-content: flex-start; } }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--text); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .container { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.97); border-bottom:1px solid var(--border); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:12px 0; }
+    .brand { display:flex; align-items:center; gap:12px; min-width:0; }
+    .brand img { width:68px; height:68px; object-fit:contain; }
+    .brand-name { margin:0; color:var(--navy); font-size:1.12rem; font-weight:800; letter-spacing:.03em; }
+    .brand-tag { margin:2px 0 0; color:var(--muted); font-size:.78rem; }
+    nav ul { list-style:none; display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px; padding:0; margin:0; color:var(--navy); font-weight:600; }
+    nav a:hover { text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:5px; }
+    .hero { padding:70px 0; background:linear-gradient(135deg,#f8fbff,#eef4ff 55%,#fffaf0); }
+    .hero-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; }
+    .eyebrow { display:inline-block; padding:8px 14px; border-radius:30px; background:rgba(212,175,55,.14); color:#795d00; font-weight:700; font-size:.88rem; margin-bottom:18px; }
+    h1 { font-size:clamp(2rem,5vw,3.5rem); line-height:1.12; color:var(--navy); margin:0 0 18px; }
+    h2 { font-size:clamp(1.7rem,4vw,2.4rem); line-height:1.2; color:var(--navy); margin:0 0 14px; }
+    h3 { color:var(--navy); margin:0 0 12px; }
+    p { color:var(--muted); }
+    section { padding:64px 0; }
+    .section-title { text-align:center; max-width:780px; margin:0 auto 32px; }
+    .light { background:var(--light); }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .two-col { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    .card,.panel,.hero-card { background:white; border:1px solid var(--border); border-radius:20px; padding:24px; box-shadow:0 8px 24px rgba(15,23,42,.05); }
+    .card { border-top:4px solid var(--gold); }
+    .hero-card img { display:block; width:min(210px,100%); margin:0 auto 18px; }
+    .hero-card ul { color:var(--muted); padding-left:20px; }
+    .highlight { color:var(--navy); font-weight:800; font-size:1.5rem; }
+    .feature { border-left:4px solid var(--gold); border-radius:12px; background:white; padding:20px; }
+    .feature strong { color:var(--navy); }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:12px; border:2px solid transparent; font-weight:700; }
+    .btn-primary { background:var(--navy); color:white; }
+    .btn-secondary { background:white; color:var(--navy); border-color:var(--navy); }
+    .btn:hover { filter:brightness(.94); }
+    footer { background:var(--navy); color:white; padding:28px 0; }
+    .footer-row { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    footer small { color:rgba(255,255,255,.88); }
+    @media(max-width:920px) {
+      .nav { flex-direction:column; align-items:flex-start; }
+      nav ul { justify-content:flex-start; }
+      .hero-grid,.cards,.two-col { grid-template-columns:1fr; }
+    }
+    @media(max-width:560px) {
+      .brand img { width:56px; height:56px; }
+      .brand-tag { font-size:.72rem; }
+      .hero { padding:48px 0; }
+      section { padding:48px 0; }
+    }
   </style>
-
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="educathlon_academy_primary_logo.png" alt="Educathlon Academy logo">
-        <div class="brand-text">
-          <p class="brand-name">EDUCATHLON ACADEMY</p>
-          <p class="brand-tag">Building Confidence and Excellence in Learning</p>
-        </div>
-      </div>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="11plus.html">11+ Preparation</a></li>
-          <li><a href="assessments.html">Assessments</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <section class="hero-simple">
-    <div class="container">
-      <div class="eyebrow">About Educathlon Academy</div>
-      <h1>Building confidence, excellence and strong learning foundations.</h1>
-      <p>Educathlon Academy provides a structured and supportive approach to learning. The aim is not only to help students perform well in exams, but also to develop confidence, resilience and a genuine understanding of key concepts.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="cards">
-        <div class="card">
-          <h3>Strong Foundations</h3>
-          <p>Lessons are designed to build secure foundations first, so students progress with confidence rather than rushing through topics.</p>
-        </div>
-        <div class="card">
-          <h3>Structured Progress</h3>
-          <p>Teaching is planned carefully across year groups, with diagnostic assessments and targeted support to identify and close gaps.</p>
-        </div>
-        <div class="card">
-          <h3>Future Growth</h3>
-          <p>The academy is built to support learners from primary years through to GCSE, with room to expand into additional subjects over time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--light);">
-    <div class="container two-col">
-      <div class="panel">
-        <h2>Teaching Approach</h2>
-        <p>Every child learns differently. Educathlon Academy combines clear explanations, step-by-step progression, carefully chosen practice and regular feedback to help learners feel capable and motivated.</p>
-      </div>
-      <div class="panel">
-        <h2>What Families Can Expect</h2>
-        <p>Parents can expect a thoughtful, organised and supportive environment where progress is monitored and confidence is built steadily over time.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-row">
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Educathlon Academy homepage">
+      <img src="educathlon_academy_primary_logo.png" alt="Educathlon Academy logo">
       <div>
-        <strong>EDUCATHLON ACADEMY</strong><br>
-        <small>Building Confidence and Excellence in Learning</small>
+        <p class="brand-name">EDUCATHLON ACADEMY</p>
+        <p class="brand-tag">Building Confidence • Developing Skills • Inspiring Success</p>
       </div>
-      <small>Primary Maths | 11+ Preparation | GCSE Maths</small>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="11plus.html">11+ Tuition</a></li>
+        <li><a href="assessments.html">Assessments</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">About Educathlon Academy</div>
+      <h1>Building Confidence. Developing Skills. Inspiring Success.</h1>
+      <p>At <strong>Educathlon Academy</strong>, we believe every child deserves the opportunity to learn with confidence, develop strong academic foundations and make meaningful progress.</p>
+      <p>Based in <strong>Berryfields, Aylesbury</strong>, we provide supportive face-to-face tuition for 11+ pupils in Years 4 and 5, KS3 Maths students and GCSE Maths students.</p>
+      <p>Our approach combines structured teaching, regular practice and personalised attention within small groups.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="contact.html">Enquire About a Free Assessment</a>
+        <a class="btn btn-secondary" href="services.html">Explore Our Programmes</a>
+      </div>
     </div>
-  </footer>
+    <div class="hero-card">
+      <img src="educathlon_academy_primary_logo.png" alt="Educathlon Academy">
+      <h3>Our Commitment</h3>
+      <ul>
+        <li>Encouraging, supportive teaching</li>
+        <li>Structured and progressive learning</li>
+        <li>Small groups of up to 10 pupils</li>
+        <li>Regular practice and feedback</li>
+        <li>Confidence and independent learning</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Experience That Supports Learning</h2>
+      <p>We combine educational experience with a clear understanding of how children build knowledge, confidence and study habits.</p>
+    </div>
+    <div class="panel">
+      <p class="highlight">15 Years of Experience</p>
+      <p>Educathlon Academy draws on 15 years of experience to provide a supportive, structured learning environment where pupils can strengthen their skills and work towards their academic goals.</p>
+      <p>We recognise that children learn at different speeds and may need different types of explanation, practice and encouragement. Our lessons aim to build understanding step by step rather than relying on memorisation alone.</p>
+      <p>Our goal is to help pupils become more confident, independent and resilient learners, with skills that extend beyond individual tests and examinations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Teaching Philosophy</h2>
+      <p>Strong foundations, steady progress and positive learning experiences are central to our approach.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Build Understanding</h3>
+        <p>We explain concepts clearly, revisit essential skills and encourage pupils to understand the reasoning behind their answers.</p>
+      </div>
+      <div class="card">
+        <h3>Develop Confidence</h3>
+        <p>We create an encouraging learning environment where pupils can ask questions, learn from mistakes and recognise their progress.</p>
+      </div>
+      <div class="card">
+        <h3>Encourage Independence</h3>
+        <p>Through structured practice and feedback, pupils develop the habits and strategies needed to tackle challenges more independently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>How We Support Every Pupil</h2>
+      <p>Our teaching combines group learning with attention to individual strengths and areas for development.</p>
+    </div>
+    <div class="two-col">
+      <div class="feature">
+        <strong>Small-Group Tuition</strong>
+        <p>With a maximum of 10 pupils per group, we can offer more focused attention while maintaining an engaging learning environment.</p>
+      </div>
+      <div class="feature">
+        <strong>Structured Weekly Lessons</strong>
+        <p>Lessons follow a progressive approach, helping pupils consolidate existing knowledge before moving on to more demanding topics.</p>
+      </div>
+      <div class="feature">
+        <strong>Practice and Homework</strong>
+        <p>Regular classwork and homework reinforce learning, encourage independent practice and highlight areas needing further support.</p>
+      </div>
+      <div class="feature">
+        <strong>Feedback and Progress</strong>
+        <p>We use pupils' work and classroom progress to identify strengths, address gaps and guide future teaching.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <div class="section-title">
+      <h2>Who We Teach</h2>
+      <p>We support children at important stages of their academic journey.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>11+ Tuition</h3>
+        <p><strong>Years 4 and 5</strong></p>
+        <p>Maths, English, Verbal Reasoning and Non-Verbal Reasoning.</p>
+        <a class="btn btn-secondary" href="11plus.html">Explore 11+ Tuition</a>
+      </div>
+      <div class="card">
+        <h3>KS3 Maths</h3>
+        <p><strong>Years 7–9</strong></p>
+        <p>Developing mathematical understanding, problem-solving and confidence.</p>
+        <a class="btn btn-secondary" href="services.html#ks3">Explore KS3 Maths</a>
+      </div>
+      <div class="card">
+        <h3>GCSE Maths</h3>
+        <p><strong>Years 10 and 11</strong></p>
+        <p>Strengthening key topics, exam-question skills and confidence.</p>
+        <a class="btn btn-secondary" href="services.html#gcse">Explore GCSE Maths</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="panel">
+      <h2>Begin Your Child's Learning Journey</h2>
+      <p>We offer a free initial assessment to help understand your child's learning needs and discuss the most suitable tuition programme.</p>
+      <p><strong>Location:</strong> Berryfields, Aylesbury</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="contact.html">Register Your Interest</a>
+        <a class="btn btn-secondary" href="mailto:educathlonacademy@gmail.com">Email Educathlon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <strong>EDUCATHLON ACADEMY</strong><br>
+      <small>Building Confidence • Developing Skills • Inspiring Success</small>
+    </div>
+    <small>11+ Tuition | KS3 Maths | GCSE Maths · Berryfields, Aylesbury</small>
+  </div>
+</footer>
+
 </body>
 </html>
